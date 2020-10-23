@@ -1,0 +1,28 @@
+###############################################################################
+##        Name: basic                                                         #
+##        Date: 14/10/2020                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile for rhel7:latest.                            #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM rhel7:activated
+
+# Update and install useful packages.
+RUN yum -y update
+
+# Create a new user.
+RUN groupadd -g 1000 user
+RUN useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
+
+# Default execution.
+CMD ["/bin/bash"]

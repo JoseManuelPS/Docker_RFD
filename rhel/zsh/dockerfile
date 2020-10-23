@@ -1,0 +1,47 @@
+###############################################################################
+##        Name: zsh                                                           #
+##        Date: 22/10/2020                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile for rhel8:zsh.                               #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+# From the rhel8 with activated subscription.
+FROM rhel8:activated
+
+# Update and install useful packages.
+RUN dnf -y update && dnf -y install curl zsh git
+
+# Install utilities <(Optional)>.
+RUN dnf -y install nano tree
+
+# Create a new user.
+RUN groupadd -g 1000 user
+RUN useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
+
+# Install oh-my-zsh.
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Basic zsh personalization.
+ENV ZSH_CUSTOM /home/user/.oh-my-zsh/custom
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
+RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k
+RUN sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
+COPY .zshrc .zshrc
+COPY .p10k.zsh .p10k.zsh
+
+# Default execution.
+CMD ["/bin/zsh"]
+
+
