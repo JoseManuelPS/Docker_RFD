@@ -12,7 +12,7 @@
 
 FROM rhel7:activated
 
-# Update and install useful packages.
+# Update packages.
 RUN yum -y update
 
 # Create a new user.
@@ -26,3 +26,5 @@ USER user
 
 # Default execution.
 CMD ["/bin/bash"]
+
+

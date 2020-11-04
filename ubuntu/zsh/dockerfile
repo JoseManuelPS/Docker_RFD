@@ -1,7 +1,7 @@
 ###############################################################################
 ##        Name: zsh                                                           #
-##        Date: 22/10/2020                                                    #
-##     Version: v1.0                                                          #
+##        Date: 26/10/2020                                                    #
+##     Version: v1.1                                                          #
 ## Description: Basic dockerfile for ubuntu:latest with shell zsh.            #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
@@ -12,11 +12,11 @@
 
 FROM ubuntu:latest
 
-# Update and install useful packages.
-RUN apt-get -y update && apt-get -y install curl zsh git
+# Update and install main packages.
+RUN apt -y update && apt -y install curl zsh git
 
 # Install utilities <(Optional)>.
-RUN apt-get -y install nano tree
+RUN apt -y install nano tree
 
 # Create a new user.
 RUN groupadd -g 1000 user
@@ -37,8 +37,8 @@ RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUS
 RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
 RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k
 RUN sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
-COPY .zshrc .zshrc
-COPY .p10k.zsh .p10k.zsh
+COPY --chown=user:user .zshrc .zshrc
+COPY --chown=user:user .p10k.zsh .p10k.zsh
 
 # Default execution.
 CMD ["/bin/zsh"]

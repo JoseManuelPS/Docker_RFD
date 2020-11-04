@@ -12,8 +12,8 @@
 
 FROM ubuntu:latest
 
-# Update and install useful packages.
-RUN apt-get -y update
+# Update packages.
+RUN apt -y update
 
 # Create a new user.
 RUN groupadd -g 1000 user
@@ -26,3 +26,5 @@ USER user
 
 # Default execution.
 CMD ["/bin/bash"]
+
+
