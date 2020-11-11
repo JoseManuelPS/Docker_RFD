@@ -1,0 +1,28 @@
+###############################################################################
+##        Name: python_server                                                 #
+##        Date: 11/11/2020                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile to create a simple python_server.            #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM python:3.9.0-alpine3.12
+
+# Expose port:
+EXPOSE 8080
+
+# Set workdir:
+WORKDIR /tmp
+
+# Sets args:
+ENV PYTHON_SERVER_EXEC="python -m http.server 8080"
+COPY ./index.html ./index.html
+
+# Default execution.
+CMD ["/bin/sh", "-c", "$PYTHON_SERVER_EXEC"]
+
+
