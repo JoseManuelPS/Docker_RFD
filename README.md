@@ -74,6 +74,40 @@ docker run --rm -ti rhel7:basic
 
 
 
+## rhel/ssh
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t rhel8:ssh -f ~/projects/docker_rfd/rhel/ssh/dockerfile ~/projects/docker_rfd/rhel/ssh/
+```
+
+Recommended run instrucction:
+```
+docker run -tid -p <(host_port)>:<(container_port)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run -tid -p 8081:22 rhel8:ssh
+```
+
+Recommended ssh connection:
+```
+ssh root:<(ip_of_host)> -p <(container_port)>
+```
+
+Example ssh connection:
+```
+ssh root:localhost -p 8081
+```
+
+
+
 ## rhel/zsh
 
 Recommended build instrucction:

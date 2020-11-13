@@ -1,0 +1,28 @@
+###############################################################################
+##        Name: ssh                                                           #
+##        Date: 13/11/2020                                                    #
+##     Version: v0.1                                                          #
+## Description: Basic dockerfile to create a simple rhel8 with ssh expose.    #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM rhel8:activated
+
+# Update and install main packages.
+RUN dnf -y update && dnf -y install openssh-server
+
+# Expose port:
+EXPOSE 22
+
+RUN mkdir -p /var/run/sshd
+RUN ssh-keygen -A
+RUN echo "root:<(some_password)>" | chpasswd
+
+# Default execution.
+CMD ["/usr/sbin/sshd", "-D"]
+
+
