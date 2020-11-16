@@ -98,12 +98,12 @@ docker run -tid -p 8081:22 rhel8:ssh
 
 Recommended ssh connection:
 ```
-ssh root:<(ip_of_host)> -p <(container_port)>
+ssh -i <(path_to_the_file_ssh_key)> root:<(ip_of_host)> -p <(container_port)>
 ```
 
 Example ssh connection:
 ```
-ssh root:localhost -p 8081
+ssh -i ~/.ssh/ssh_key root:localhost -p 8081
 ```
 
 
