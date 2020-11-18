@@ -1,0 +1,29 @@
+###############################################################################
+##        Name: basic                                                         #
+##        Date: 18/11/2020                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile for alpine:latest.                           #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM alpine:latest
+
+# Update packages.
+RUN apk update
+
+# Create a new user.
+RUN adduser -h /home/user -s /bin/sh -u 1000 -g 1000 -D user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
+
+# Default execution.
+CMD ["/bin/sh"]
+
+

@@ -2,6 +2,59 @@
 
 Multiple dockerfiles for all kinds of problems.
 
+## alpine/basic
+
+Recommended build instrucction:
+```
+docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm --pull -t alpine:basic -f ~/projects/docker_rfd/alpine/basic .
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti alpine:basic
+```
+
+
+
+## alpine/stress_test
+
+Recommended build instrucction:
+```
+docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm --pull -t alpine:stress_test -f ~/projects/docker_rfd/alpine/stress_test/dockerfile ~/projects/docker_rfd/alpine/stress_test/
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti alpine:stress_test
+```
+
+Example run instrucction (Set test time 20s):
+```
+docker run --rm -ti -e STTIME=20 alpine:stress_test
+```
+
+
+
 ## ubuntu/basic
 
 Recommended build instrucction:
