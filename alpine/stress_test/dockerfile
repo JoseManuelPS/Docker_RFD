@@ -1,8 +1,8 @@
 ###############################################################################
-##        Name: basic                                                         #
+##        Name: stress_test                                                   #
 ##        Date: 18/11/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile for alpine:latest.                           #
+## Description: Basic dockerfile for alpine:stress_test.                      #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -12,18 +12,16 @@
 
 FROM alpine:latest
 
-# Update packages.
-RUN apk update
+# Update and install main packages.
+RUN apk update && apk add bash stress-ng
 
-# Create a new user.
-RUN adduser -h /home/user -s /bin/sh -u 1000 -g 1000 -D user
+ENV STTIME=10
 
-# Set <(user)> as the default user.
-WORKDIR /home/user
-ENV HOME /home/user
-USER user
+# Copy stress_test.sh script.
+COPY ./stress_test.sh ./stress_test.sh
+RUN chmod +x ./stress_test.sh
 
 # Default execution.
-CMD ["/bin/sh"]
+CMD ["/bin/bash", "-c", "./stress_test.sh"]
 
 
