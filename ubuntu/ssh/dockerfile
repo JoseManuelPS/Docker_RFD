@@ -2,7 +2,7 @@
 ##        Name: ssh                                                           #
 ##        Date: 12/12/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile to create a simple RHEL8 with ssh expose.    #
+## Description: Basic dockerfile to create a simple Ubuntu with ssh expose.   #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,10 +10,10 @@
 
 
 
-FROM rhel8:activated
+FROM ubuntu:latest
 
 # Update and install main packages.
-RUN dnf -y update && dnf -y install openssh-server
+RUN apt -y update && apt -y install openssh-server
 
 # Expose port:
 EXPOSE 22
