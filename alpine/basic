@@ -1,8 +1,8 @@
 ###############################################################################
 ##        Name: basic                                                         #
-##        Date: 14/10/2020                                                    #
+##        Date: 18/11/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile for Ubuntu.                                  #
+## Description: Basic dockerfile for alpine:latest.                           #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,14 +10,13 @@
 
 
 
-FROM ubuntu:latest
+FROM alpine:latest
 
 # Update packages.
-RUN apt -y update
+RUN apk update
 
 # Create a new user.
-RUN groupadd -g 1000 user
-RUN useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+RUN adduser -h /home/user -s /bin/sh -u 1000 -g 1000 -D user
 
 # Set <(user)> as the default user.
 WORKDIR /home/user
@@ -25,6 +24,6 @@ ENV HOME /home/user
 USER user
 
 # Default execution.
-CMD ["/bin/bash"]
+CMD ["/bin/sh"]
 
 
