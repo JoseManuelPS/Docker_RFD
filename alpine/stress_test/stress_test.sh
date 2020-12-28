@@ -1,8 +1,8 @@
 #!/bin/bash
 ###############################################################################
 ##        Name: stress_test.sh                                                #
-##        Date: 18/11/2020                                                    #
-##     Version: v1.0                                                          #
+##        Date: 24/11/2020                                                    #
+##     Version: v1.1                                                          #
 ## Description: Simple script for test CPU/RAM/NETWORK/STORAGE stats.         #
 ##----------------------------------------------------------------------------#
 ##      Values: -> STTIME                                                     #
@@ -15,7 +15,7 @@
 
 # Script information.
 scriptName="stress_test.sh"
-scriptVersion="v1.0"
+scriptVersion="v1.1"
 
 # Script directories.
 scriptPath=$(cd $(dirname $0) ; pwd -P)/
@@ -63,7 +63,7 @@ Main () {
   Load_Network
 
   # Load: Storage
-  Load_STORAGE
+  Load_Storage
 
   if [ "$errors" != "" ]; then
     Catch
@@ -113,16 +113,6 @@ Load_RAM () {
 
   echo -e "\n\n###########  START RAM TESTS  ###########"
 
-  echo -e "\nReserving 16Mb - $STTIME seconds"
-  uptime
-  stress-ng -m 1 --vm-bytes 16M -t $STTIME
-  uptime
-
-  echo -e "\nReserving 128Mb - $STTIME seconds"
-  uptime
-  stress-ng -m 1 --vm-bytes 128M -t $STTIME
-  uptime
-
   echo -e "\nReserving 256Mb - $STTIME seconds"
   uptime
   stress-ng -m 1 --vm-bytes 256M -t $STTIME
@@ -136,6 +126,11 @@ Load_RAM () {
   echo -e "\nReserving 1Gb - $STTIME seconds"
   uptime
   stress-ng -m 1 --vm-bytes 1024M -t $STTIME
+  uptime
+
+  echo -e "\nReserving 2Gb - $STTIME seconds"
+  uptime
+  stress-ng -m 1 --vm-bytes 2048M -t $STTIME
   uptime
 
   echo -e "\n############  END RAM TESTS  ############"
@@ -157,39 +152,37 @@ Load_NETWORK () {
 
 
 
-Load_STORAGE () {
+Load_Storage () {
 
   echo -e "\n\n###########  START STORAGE TESTS  ###########"
-
-  echo -e "\nReserving 16Mb - $STTIME seconds"
-  uptime
-  dd if=/dev/zero of=/tmp/loadfile16 bs=1M count=16
-  dd if=/dev/zero of=/tmp/loadfile16 bs=1M count=16; sleep $STTIME
-  uptime
-
-  echo -e "\nReserving 128Mb - $STTIME seconds"
-  uptime
-  dd if=/dev/zero of=/tmp/loadfile128 bs=1M count=128
-  dd if=/dev/zero of=/tmp/loadfile128 bs=1M count=128; sleep $STTIME
-  uptime
 
   echo -e "\nReserving 256Mb - $STTIME seconds"
   uptime
   dd if=/dev/zero of=/tmp/loadfile256 bs=1M count=256
   dd if=/dev/zero of=/tmp/loadfile256 bs=1M count=256; sleep $STTIME
   uptime
+  rm -f /tmp/loadfile256
 
   echo -e "\nReserving 512Mb - $STTIME seconds"
   uptime
   dd if=/dev/zero of=/tmp/loadfile512 bs=1M count=512
   dd if=/dev/zero of=/tmp/loadfile512 bs=1M count=512; sleep $STTIME
   uptime
+  rm -f /tmp/loadfile512
 
   echo -e "\nReserving 1Gb - $STTIME seconds"
   uptime
   dd if=/dev/zero of=/tmp/loadfile1024 bs=1M count=1024
   dd if=/dev/zero of=/tmp/loadfile1024 bs=1M count=1024; sleep $STTIME
   uptime
+  rm -f /tmp/loadfile1024
+
+  echo -e "\nReserving 2Gb - $STTIME seconds"
+  uptime
+  dd if=/dev/zero of=/tmp/loadfile2048 bs=1M count=2048
+  dd if=/dev/zero of=/tmp/loadfile2048 bs=1M count=2048; sleep $STTIME
+  uptime
+  rm -f /tmp/loadfile2048
 
   echo -e "\n############  END STORAGE TESTS  ############"
 }
