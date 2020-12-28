@@ -2,6 +2,8 @@
 
 Multiple dockerfiles for all kinds of problems.
 
+
+
 ## alpine/basic
 
 Recommended build instrucction:
@@ -55,6 +57,54 @@ docker run --rm -ti -e STTIME=20 alpine:stress_test
 
 
 
+## python/basic
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t python:basic -f ~/projects/docker_rfd/python/basic .
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti python:basic
+```
+
+
+
+## python/python_server
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t python:python_server -f ~/projects/docker_rfd/python/python_server/dockerfile ~/projects/docker_rfd/python/python_server/
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti -p <(host_port)>:<(docker_port)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti -p 8085:8080 python:python_server
+```
+
+
+
 ## ubuntu/basic
 
 Recommended build instrucction:
@@ -75,6 +125,40 @@ docker run --rm -ti <(image_name)>:<(image_version)>
 Example run instrucction:
 ```
 docker run --rm -ti ubuntu:basic
+```
+
+
+
+## ubuntu/ssh
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t ubuntu:ssh -f ~/projects/docker_rfd/ubuntu/ssh/dockerfile ~/projects/docker_rfd/ubuntu/ssh/
+```
+
+Recommended run instrucction:
+```
+docker run -tid -p <(host_port)>:<(container_port)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run -tid -p 8081:22 ubuntu:ssh
+```
+
+Recommended ssh connection:
+```
+ssh -i <(path_to_the_file_ssh_key)> root@<(ip_of_host)> -p <(container_port)>
+```
+
+Example ssh connection:
+```
+ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
 
 
@@ -127,6 +211,40 @@ docker run --rm -ti rhel7:basic
 
 
 
+## rhel/ssh
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t rhel8:ssh -f ~/projects/docker_rfd/rhel/ssh/dockerfile ~/projects/docker_rfd/rhel/ssh/
+```
+
+Recommended run instrucction:
+```
+docker run -tid -p <(host_port)>:<(container_port)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run -tid -p 8081:22 rhel8:ssh
+```
+
+Recommended ssh connection:
+```
+ssh -i <(path_to_the_file_ssh_key)> root@<(ip_of_host)> -p <(container_port)>
+```
+
+Example ssh connection:
+```
+ssh -i ~/.ssh/ssh_key root@localhost -p 8081
+```
+
+
+
 ## rhel/zsh
 
 Recommended build instrucction:
@@ -148,3 +266,5 @@ Example run instrucction:
 ```
 docker run --rm -ti --name rhel8_basic rhel8:zsh
 ```
+
+

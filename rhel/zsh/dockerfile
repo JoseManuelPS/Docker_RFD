@@ -2,7 +2,7 @@
 ##        Name: zsh                                                           #
 ##        Date: 26/10/2020                                                    #
 ##     Version: v1.1                                                          #
-## Description: Basic dockerfile for rhel8:zsh.                               #
+## Description: Basic dockerfile for RHEL8 with zsh.                          #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
