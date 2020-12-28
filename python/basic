@@ -2,7 +2,8 @@
 ##        Name: basic                                                         #
 ##        Date: 13/12/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile for Python.                                  #
+## Description: A simple dockerfile, which runs a base image of alpine with   #
+##              python 3.9.0.                                                 #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,7 +11,7 @@
 
 
 
-FROM python:latest
+FROM python:3.9.0-alpine3.12
 
 # Update packages.
 RUN apt update

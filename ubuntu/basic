@@ -2,7 +2,7 @@
 ##        Name: basic                                                         #
 ##        Date: 14/10/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile for Ubuntu.                                  #
+## Description: A simple dockerfile, which runs a base image of ubuntu.       #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,7 +10,7 @@
 
 
 
-FROM ubuntu:latest
+FROM ubuntu:21.04
 
 # Update packages.
 RUN apt -y update

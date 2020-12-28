@@ -2,7 +2,8 @@
 ##        Name: ssh                                                           #
 ##        Date: 12/12/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile to create a simple Ubuntu with ssh expose.   #
+## Description: A simple dockerfile, which runs a simple container with the   #
+##              ssh service exposed.                                          #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,7 +11,7 @@
 
 
 
-FROM ubuntu:latest
+FROM ubuntu:21.04
 
 # Update and install main packages.
 RUN apt -y update && apt -y install openssh-server

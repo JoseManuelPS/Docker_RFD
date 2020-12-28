@@ -2,7 +2,8 @@
 ##        Name: stress_test                                                   #
 ##        Date: 18/11/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile for alpine:stress_test.                      #
+## Description: A simple dockerfile, which runs a script to perform a stress  #
+##              test to check CPU, RAM, Network and Disk.                     #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,7 +11,7 @@
 
 
 
-FROM alpine:latest
+FROM alpine:3.12.3
 
 # Update and install main packages.
 RUN apk update && apk add bash stress-ng

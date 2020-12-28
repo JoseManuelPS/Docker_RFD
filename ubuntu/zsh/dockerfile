@@ -2,7 +2,8 @@
 ##        Name: zsh                                                           #
 ##        Date: 26/10/2020                                                    #
 ##     Version: v1.1                                                          #
-## Description: Basic dockerfile for Ubuntu with shell zsh.                   #
+## Description: A simple dockerfile, which runs a simple container with the   #
+##              custom shell zsh with ohmyzsh.                                #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -10,7 +11,7 @@
 
 
 
-FROM ubuntu:latest
+FROM ubuntu:21.04
 
 # Update and install main packages.
 RUN apt -y update && apt -y install curl zsh git
