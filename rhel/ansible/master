@@ -1,7 +1,7 @@
 ###############################################################################
 ##        Name: master                                                        #
-##        Date: 13/12/2020                                                    #
-##     Version: v0.1                                                          #
+##        Date: 04/01/2021                                                    #
+##     Version: v0.3                                                          #
 ## Description: Basic dockerfile to create a simple ansible master node       #
 ##              over RHEL8.                                                   #
 ##----------------------------------------------------------------------------#
@@ -24,8 +24,7 @@ RUN dnf -y install nano iputils
 RUN echo "root:<(some_password)>" | chpasswd
 
 # Create a new user.
-RUN groupadd -g 1000 user
-RUN useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
 
 # Set <(user)> as the default user.
 WORKDIR /home/user
@@ -40,8 +39,7 @@ ENV ZSH_CUSTOM /home/user/.oh-my-zsh/custom
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
-RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k
-RUN sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
+RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k; sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
 COPY --chown=user:user .zshrc .zshrc
 COPY --chown=user:user .p10k.zsh .p10k.zsh
 
