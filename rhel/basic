@@ -2,7 +2,7 @@
 ##        Name: basic                                                         #
 ##        Date: 14/10/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: Basic dockerfile to create a cotainer based on RHEL7.         #
+## Description: A simple dockerfile, which runs a base image of rhel7.        #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

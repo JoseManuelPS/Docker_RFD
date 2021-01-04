@@ -4,6 +4,14 @@ Multiple dockerfiles for all kinds of problems.
 
 
 
+## Prerequisites
+
+Currently all the images have been generated on Docker version **20.10.1**
+
+If you want to make use rhel images, you should also create a base image called **rhel7:activated** or **rhel8:activated** depending on the image you are going to build. An alternative to this would be to remove the <(yum update)> or <(dnf update)> commands from the dockerfiles, but correct operation is not guaranteed.
+
+
+
 ## alpine/basic
 
 Recommended build instrucction:
@@ -25,7 +33,11 @@ Example run instrucction:
 ```
 docker run --rm -ti alpine:basic
 ```
+_Last test info:_
 
+- _Date: 18/11/2020_
+
+- _Base image versión: 3.12.3_
 
 
 ## alpine/stress_test
@@ -54,6 +66,11 @@ Example run instrucction (Set test time 20s):
 ```
 docker run --rm -ti -e STTIME=20 alpine:stress_test
 ```
+_Last test info:_
+
+- _Date: 18/11/2020_
+
+- _Base image versión: 3.12.3_
 
 
 
@@ -78,7 +95,11 @@ Example run instrucction:
 ```
 docker run --rm -ti python:basic
 ```
+_Last test info:_
 
+- _Date: 13/12/2020_
+
+- _Base image versión: 3.9.0-alpine3.12_
 
 
 ## python/python_server
@@ -102,6 +123,11 @@ Example run instrucction:
 ```
 docker run --rm -ti -p 8085:8080 python:python_server
 ```
+_Last test info:_
+
+- _Date: 11/11/2020_
+
+- _Base image versión: 3.9.0-alpine3.12_
 
 
 
@@ -126,7 +152,11 @@ Example run instrucction:
 ```
 docker run --rm -ti ubuntu:basic
 ```
+_Last test info:_
 
+- _Date: 14/10/2020_
+
+- _Base image versión: 21.04_
 
 
 ## ubuntu/ssh
@@ -160,7 +190,11 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
+_Last test info:_
 
+- _Date: 12/12/2020_
+
+- _Base image versión: 21.04_
 
 
 ## ubuntu/zsh
@@ -184,6 +218,12 @@ Example run instrucction:
 ```
 docker run --rm -ti --name ubuntu_basic ubuntu:basic
 ```
+_Last test info:_
+
+- _Date: 26/10/2020_
+
+- _Base image versión: 21.04_
+
 
 
 ## rhel/ansible
@@ -218,7 +258,11 @@ Example exec instrucction:
 ```
 docker exec -ti ansible_master /bin/zsh
 ```
+_Last test info:_
 
+- _Date: 04/12/2021_
+
+- _Base image versión: 8.3_
 
 
 ### rhel/ansible/worker
@@ -252,7 +296,11 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@ansible_worker_01 -p 8081
 ```
+_Last test info:_
 
+- _Date: 04/12/2021_
+
+- _Base image versión: 8.3_
 
 
 ## rhel/basic
@@ -276,7 +324,11 @@ Example run instrucction:
 ```
 docker run --rm -ti rhel7:basic
 ```
+_Last test info:_
 
+- _Date: 14/10/2020_
+
+- _Base image versión: 7.9_
 
 
 ## rhel/ssh
@@ -310,7 +362,11 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
+_Last test info:_
 
+- _Date: 12/12/2020_
+
+- _Base image versión: 8.2_
 
 
 ## rhel/zsh
@@ -334,5 +390,10 @@ Example run instrucction:
 ```
 docker run --rm -ti --name rhel8_basic rhel8:zsh
 ```
+_Last test info:_
+
+- _Date: 26/10/2020_
+
+- _Base image versión: 8.2_
 
 
