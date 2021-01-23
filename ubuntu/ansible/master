@@ -3,7 +3,7 @@
 ##        Date: 23/01/2021                                                    #
 ##     Version: b4                                                            #
 ## Description: Basic dockerfile to create a simple ansible master node       #
-##              over RHEL8.                                                   #
+##              over Ubuntu.                                                  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -11,14 +11,14 @@
 
 
 
-FROM rhel8:activated
+FROM ubuntu:21.04
 
 # Update and install main packages.
-RUN subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
-RUN dnf -y update && dnf -y install python3 curl zsh git ansible
+RUN ln -snf /usr/share/zoneinfo/Europe/Madrid /etc/localtime; echo Europe/Madrid > /etc/timezone
+RUN apt -y update; apt -y install software-properties-common; apt-add-repository --yes --update ppa:ansible/ansible; apt -y install python3 curl zsh git ansible
 
 # Install utilities <(Optional)>.
-RUN dnf -y install nano iputils
+RUN apt -y install nano iputils-ping net-tools
 
 # BF: Sustiuir pass por <(some_password)>
 # TODO: Type some password for root before build.

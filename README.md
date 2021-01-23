@@ -130,6 +130,82 @@ _Last test info:_
 - _Base image versión: 3.9.0-alpine3.12_
 
 
+## ubuntu/ansible
+
+### ubuntu/ansible/master
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t ubuntu/ansible:master -f ~/projects/docker_rfd/ubuntu/ansible/master ~/projects/docker_rfd/ubuntu/ansible/
+```
+
+Recommended run instrucction:
+```
+docker run -tid --name <(some_container_name)> -h <(some_hostname)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run -tid --name ansible_master -h ansible_master ubuntu/ansible:master
+```
+
+Recommended exec instrucction:
+```
+docker exec -ti <(container_name)> /bin/zsh
+```
+
+Example exec instrucction:
+```
+docker exec -ti ansible_master /bin/zsh
+```
+_Last test info:_
+
+- _Date: 23/01/2021_
+
+- _Base image versión: 21.04_
+
+
+### ubuntu/ansible/node
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t ubuntu/ansible:node -f ~/projects/docker_rfd/ubuntu/ansible/node ~/projects/docker_rfd/ubuntu/ansible/
+```
+
+Recommended run instrucction:
+```
+docker run -tid -p <(host_port)>:<(container_port)> --name <(some_container_name)> -h <(some_hostname)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run -tid -p 8081:22 --name ansible_node_01 -h ansible_node_01 ubuntu/ansible:node
+```
+
+Recommended ssh connection:
+```
+ssh -i <(path_to_the_file_ssh_key)> root@<(ip_of_host)> -p <(container_port)>
+```
+
+Example ssh connection:
+```
+ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
+```
+_Last test info:_
+
+- _Date: 23/01/2021_
+
+- _Base image versión: 21.04_
+
 
 ## ubuntu/basic
 
@@ -236,7 +312,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel8:ansible_master -f ~/projects/docker_rfd/rhel/ansible/master ~/projects/docker_rfd/rhel/ansible/
+docker build --force-rm -t rhel/ansible:master -f ~/projects/docker_rfd/rhel/ansible/master ~/projects/docker_rfd/rhel/ansible/
 ```
 
 Recommended run instrucction:
@@ -246,7 +322,7 @@ docker run -tid --name <(some_container_name)> -h <(some_hostname)> <(image_name
 
 Example run instrucction:
 ```
-docker run -tid --name ansible_master -h ansible_master rhel8:ansible_master
+docker run -tid --name ansible_master -h ansible_master rhel/ansible:master
 ```
 
 Recommended exec instrucction:
@@ -260,12 +336,12 @@ docker exec -ti ansible_master /bin/zsh
 ```
 _Last test info:_
 
-- _Date: 04/12/2021_
+- _Date: 23/01/2021_
 
 - _Base image versión: 8.3_
 
 
-### rhel/ansible/worker
+### rhel/ansible/node
 
 Recommended build instrucction:
 ```
@@ -274,7 +350,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel8:ansible_worker -f ~/projects/docker_rfd/rhel/ansible/worker ~/projects/docker_rfd/rhel/ansible/
+docker build --force-rm -t rhel/ansible:node -f ~/projects/docker_rfd/rhel/ansible/node ~/projects/docker_rfd/rhel/ansible/
 ```
 
 Recommended run instrucction:
@@ -284,7 +360,7 @@ docker run -tid -p <(host_port)>:<(container_port)> --name <(some_container_name
 
 Example run instrucction:
 ```
-docker run -tid -p 8081:22 --name ansible_worker_01 -h ansible_worker_01 rhel8:ansible_worker
+docker run -tid -p 8081:22 --name ansible_node_01 -h ansible_node_01 rhel/ansible:node
 ```
 
 Recommended ssh connection:
@@ -294,11 +370,11 @@ ssh -i <(path_to_the_file_ssh_key)> root@<(ip_of_host)> -p <(container_port)>
 
 Example ssh connection:
 ```
-ssh -i ~/.ssh/ssh_key root@ansible_worker_01 -p 8081
+ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
 _Last test info:_
 
-- _Date: 04/12/2021_
+- _Date: 23/01/2021_
 
 - _Base image versión: 8.3_
 
@@ -312,7 +388,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel7:basic -f ~/projects/docker_rfd/rhel/basic .
+docker build --force-rm -t rhel:basic -f ~/projects/docker_rfd/rhel/basic .
 ```
 
 Recommended run instrucction:
@@ -322,7 +398,7 @@ docker run --rm -ti <(image_name)>:<(image_version)>
 
 Example run instrucction:
 ```
-docker run --rm -ti rhel7:basic
+docker run --rm -ti rhel:basic
 ```
 _Last test info:_
 
@@ -340,7 +416,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel8:ssh -f ~/projects/docker_rfd/rhel/ssh/dockerfile ~/projects/docker_rfd/rhel/ssh/
+docker build --force-rm -t rhel:ssh -f ~/projects/docker_rfd/rhel/ssh/dockerfile ~/projects/docker_rfd/rhel/ssh/
 ```
 
 Recommended run instrucction:
@@ -350,7 +426,7 @@ docker run -tid -p <(host_port)>:<(container_port)> <(image_name)>:<(image_versi
 
 Example run instrucction:
 ```
-docker run -tid -p 8081:22 rhel8:ssh
+docker run -tid -p 8081:22 rhel:ssh
 ```
 
 Recommended ssh connection:
@@ -378,7 +454,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel8:zsh -f ~/projects/docker_rfd/rhel/zsh/dockerfile ~/projects/docker_rfd/rhel/zsh
+docker build --force-rm -t rhel:zsh -f ~/projects/docker_rfd/rhel/zsh/dockerfile ~/projects/docker_rfd/rhel/zsh
 ```
 
 Recommended run instrucction:
@@ -388,7 +464,7 @@ docker run --rm -ti --name <(container_name)> <(image_name)>:<(image_version)>
 
 Example run instrucction:
 ```
-docker run --rm -ti --name rhel8_basic rhel8:zsh
+docker run --rm -ti --name rhel_zsh rhel:zsh
 ```
 _Last test info:_
 

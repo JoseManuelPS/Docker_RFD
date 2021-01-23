@@ -1,9 +1,8 @@
 ###############################################################################
-##        Name: ssh                                                           #
-##        Date: 04/01/2021                                                    #
-##     Version: v0.3                                                          #
-## Description: Basic dockerfile to create a simple ansible worker node       #
-##              over RHEL8.                                                   #
+##        Name: node                                                          #
+##        Date: 23/01/2021                                                    #
+##     Version: b4                                                            #
+## Description: Basic dockerfile to create a simple ansible node over RHEL8.  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -20,7 +19,7 @@ RUN dnf -y update && dnf -y install openssh-server python3 sudo
 EXPOSE 22
 
 # Create a new user.
-RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 user
 
 # Config sshd
 RUN mkdir -p /var/run/sshd /root/.ssh/ /home/user/.ssh/
@@ -29,8 +28,14 @@ COPY ./ssh_key.pub /root/.ssh/ssh_key.pub
 COPY ./ssh_key.pub /home/user/.ssh/ssh_key.pub
 RUN cat /root/.ssh/ssh_key.pub > /root/.ssh/authorized_keys; cat /home/user/.ssh/ssh_key.pub > /home/user/.ssh/authorized_keys
 
-# TODO: Type some password before build.
-RUN echo "root:<(some_password)>" | chpasswd; echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+# BF: Sustiuir pass por <(some_password)>
+# TODO: Type some password for root before build.
+RUN echo "root:pass" | chpasswd; echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
 
 # Default execution.
 CMD ["/usr/sbin/sshd", "-D"]
