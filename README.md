@@ -202,7 +202,7 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
 _Last test info:_
 
-- _Date: 23/01/2021_
+- _Date: 24/01/2021_
 
 - _Base image versión: 21.04_
 
@@ -374,7 +374,7 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
 _Last test info:_
 
-- _Date: 23/01/2021_
+- _Date: 24/01/2021_
 
 - _Base image versión: 8.3_
 
