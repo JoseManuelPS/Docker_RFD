@@ -1,9 +1,9 @@
 ###############################################################################
-##        Name: zsh                                                           #
-##        Date: 26/10/2020                                                    #
-##     Version: v1.1                                                          #
-## Description: A simple dockerfile, which runs a simple container with the   #
-##              custom shell zsh with ohmyzsh over RHEL8.                     #
+##        Name: master                                                        #
+##        Date: 03/04/2021                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile to create a simple ansible master node       #
+##              over RHEL8.                                                   #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -11,18 +11,20 @@
 
 
 
-# From the rhel8 with activated subscription.
 FROM rhel8:activated
 
 # Update and install main packages.
-RUN dnf -y update && dnf -y install curl zsh git
+RUN subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
+RUN dnf -y update && dnf -y install python3 curl zsh git ansible
 
 # Install utilities <(Optional)>.
-RUN dnf -y install nano tree
+RUN dnf -y install nano iputils
+
+# TODO: Type some password for root before build.
+RUN echo "root:<(some_password)>" | chpasswd
 
 # Create a new user.
-RUN groupadd -g 1000 user
-RUN useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 user
 
 # Set <(user)> as the default user.
 WORKDIR /home/user
@@ -37,10 +39,13 @@ ENV ZSH_CUSTOM /home/user/.oh-my-zsh/custom
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
-RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k
-RUN sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
+RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k; sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
 COPY --chown=user:user .zshrc .zshrc
 COPY --chown=user:user .p10k.zsh .p10k.zsh
+
+# SSH Config.
+COPY --chown=user:user ./ssh_key /home/user/.ssh/ssh_key
+RUN chmod 600 /home/user/.ssh/ssh_key
 
 # Default execution.
 CMD ["/bin/zsh"]

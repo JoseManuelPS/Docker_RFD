@@ -2,8 +2,8 @@
 ##        Name: stress_test                                                   #
 ##        Date: 18/11/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: A simple dockerfile, which runs a script to perform a stress  #
-##              test to check CPU, RAM, Network and Disk.                     #
+## Description: Basic dockerfile to execute the script stress_test.sh         #
+##              over Alpine.                                                  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

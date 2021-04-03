@@ -1,0 +1,43 @@
+###############################################################################
+##        Name: node                                                          #
+##        Date: 24/01/2021                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile to create a simple ansible node over Ubuntu. #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM ubuntu:21.04
+
+# Update and install main packages.
+RUN ln -snf /usr/share/zoneinfo/Europe/Madrid /etc/localtime; echo Europe/Madrid > /etc/timezone
+RUN apt -y update && apt -y install openssh-server python3 sudo
+
+# Expose port:
+EXPOSE 22
+
+# Create a new user.
+RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 user
+
+# Config sshd
+RUN mkdir -p /var/run/sshd /root/.ssh/ /home/user/.ssh/
+RUN ssh-keygen -A; chmod +r -R /etc/ssh/
+COPY ./ssh_key.pub /root/.ssh/ssh_key.pub
+COPY ./ssh_key.pub /home/user/.ssh/ssh_key.pub
+RUN cat /root/.ssh/ssh_key.pub > /root/.ssh/authorized_keys; cat /home/user/.ssh/ssh_key.pub > /home/user/.ssh/authorized_keys
+
+# TODO: Type some password for root before build.
+RUN echo "root:<(some_password)>" | chpasswd; echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
+
+# Default execution.
+CMD ["/usr/sbin/sshd", "-D"]
+
+
