@@ -1,7 +1,7 @@
 ###############################################################################
 ##        Name: node                                                          #
 ##        Date: 24/01/2021                                                    #
-##     Version: b5                                                            #
+##     Version: v1.0                                                          #
 ## Description: Basic dockerfile to create a simple ansible node over Ubuntu. #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #

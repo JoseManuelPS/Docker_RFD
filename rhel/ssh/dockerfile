@@ -2,8 +2,8 @@
 ##        Name: ssh                                                           #
 ##        Date: 12/12/2020                                                    #
 ##     Version: v1.0                                                          #
-## Description: A simple dockerfile, which runs a simple container with the   #
-##              ssh service exposed.                                          #
+## Description: Basic dockerfile which runs a simple container with the ssh   #
+##              service exposed over RHEL8.                                   #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

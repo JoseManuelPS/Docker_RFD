@@ -6,9 +6,7 @@ Multiple dockerfiles for all kinds of problems.
 
 ## Prerequisites
 
-Currently all the images have been generated on Docker version **20.10.1**
-
-If you want to make use rhel images, you should also create a base image called **rhel7:activated** or **rhel8:activated** depending on the image you are going to build. An alternative to this would be to remove the <(yum update)> or <(dnf update)> commands from the dockerfiles, but correct operation is not guaranteed.
+If you want to make use rhel dockerfiles, you should also create a base image called **rhel7:activated** or **rhel8:activated** with an active subscription.
 
 
 
@@ -37,7 +35,9 @@ _Last test info:_
 
 - _Date: 18/11/2020_
 
-- _Base image versión: 3.12.3_
+- _Base image versión: alpine:3.12.3_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## alpine/stress_test
@@ -70,7 +70,9 @@ _Last test info:_
 
 - _Date: 18/11/2020_
 
-- _Base image versión: 3.12.3_
+- _Base image versión: alpine:3.12.3_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 
@@ -99,7 +101,9 @@ _Last test info:_
 
 - _Date: 13/12/2020_
 
-- _Base image versión: 3.9.0-alpine3.12_
+- _Base image versión: python:3.9.0-alpine3.12_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## python/python_server
@@ -127,7 +131,10 @@ _Last test info:_
 
 - _Date: 11/11/2020_
 
-- _Base image versión: 3.9.0-alpine3.12_
+- _Base image versión: python:3.9.0-alpine3.12_
+
+- _Build on: Docker-CE 20.10.1_
+
 
 
 ## ubuntu/ansible
@@ -166,7 +173,9 @@ _Last test info:_
 
 - _Date: 23/01/2021_
 
-- _Base image versión: 21.04_
+- _Base image versión: ubuntu:21.04_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ### ubuntu/ansible/node
@@ -204,7 +213,9 @@ _Last test info:_
 
 - _Date: 24/01/2021_
 
-- _Base image versión: 21.04_
+- _Base image versión: ubuntu:21.04_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## ubuntu/basic
@@ -232,7 +243,9 @@ _Last test info:_
 
 - _Date: 14/10/2020_
 
-- _Base image versión: 21.04_
+- _Base image versión: ubuntu:21.04_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## ubuntu/ssh
@@ -270,7 +283,9 @@ _Last test info:_
 
 - _Date: 12/12/2020_
 
-- _Base image versión: 21.04_
+- _Base image versión: ubuntu:21.04_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## ubuntu/zsh
@@ -298,7 +313,9 @@ _Last test info:_
 
 - _Date: 26/10/2020_
 
-- _Base image versión: 21.04_
+- _Base image versión: ubuntu:21.04_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 
@@ -338,7 +355,9 @@ _Last test info:_
 
 - _Date: 23/01/2021_
 
-- _Base image versión: 8.3_
+- _Base image versión: rhel8:8.3_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ### rhel/ansible/node
@@ -376,7 +395,9 @@ _Last test info:_
 
 - _Date: 24/01/2021_
 
-- _Base image versión: 8.3_
+- _Base image versión: rhel8:8.3_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## rhel/basic
@@ -404,7 +425,9 @@ _Last test info:_
 
 - _Date: 14/10/2020_
 
-- _Base image versión: 7.9_
+- _Base image versión: rhel7:7.9_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## rhel/ssh
@@ -442,7 +465,9 @@ _Last test info:_
 
 - _Date: 12/12/2020_
 
-- _Base image versión: 8.2_
+- _Base image versión: rhel8:8.2_
+
+- _Build on: Docker-CE 20.10.1_
 
 
 ## rhel/zsh
@@ -470,6 +495,8 @@ _Last test info:_
 
 - _Date: 26/10/2020_
 
-- _Base image versión: 8.2_
+- _Base image versión: rhel8:8.2_
+
+- _Build on: Docker-CE 20.10.1_
 
 

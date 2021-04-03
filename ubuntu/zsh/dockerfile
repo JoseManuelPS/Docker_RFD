@@ -3,7 +3,7 @@
 ##        Date: 26/10/2020                                                    #
 ##     Version: v1.1                                                          #
 ## Description: A simple dockerfile, which runs a simple container with the   #
-##              custom shell zsh with ohmyzsh.                                #
+##              custom shell zsh with ohmyzsh over RHEL8.                     #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

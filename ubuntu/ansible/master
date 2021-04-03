@@ -1,7 +1,7 @@
 ###############################################################################
 ##        Name: master                                                        #
 ##        Date: 23/01/2021                                                    #
-##     Version: b4                                                            #
+##     Version: v1.0                                                          #
 ## Description: Basic dockerfile to create a simple ansible master node       #
 ##              over Ubuntu.                                                  #
 ##----------------------------------------------------------------------------#

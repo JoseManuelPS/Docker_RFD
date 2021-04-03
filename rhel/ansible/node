@@ -1,7 +1,7 @@
 ###############################################################################
 ##        Name: node                                                          #
-##        Date: 24/01/2021                                                    #
-##     Version: b5                                                            #
+##        Date: 03/04/2021                                                    #
+##     Version: v1.0                                                          #
 ## Description: Basic dockerfile to create a simple ansible node over RHEL8.  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
