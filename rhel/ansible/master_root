@@ -1,7 +1,7 @@
 ###############################################################################
-##        Name: master                                                        #
+##        Name: master_root                                                   #
 ##        Date: 06/04/2021                                                    #
-##     Version: v1.1                                                          #
+##     Version: v1.0                                                          #
 ## Description: Basic dockerfile to create a simple ansible master node       #
 ##              over RHEL8.                                                   #
 ##----------------------------------------------------------------------------#
@@ -20,16 +20,8 @@ RUN dnf -y update && dnf -y install python3 curl zsh git ansible
 # Install utilities <(Optional)>.
 RUN dnf -y install nano iputils
 
-# TODO: Type some password for root before build.
-RUN echo "root:<(some_password)>" | chpasswd
-
-# Create a new user.
-RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 user
-
-# Set <(user)> as the default user.
-WORKDIR /home/user
-ENV HOME /home/user
-USER user
+WORKDIR /root
+ENV HOME /root
 
 # Install oh-my-zsh.
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -41,13 +33,13 @@ RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUS
 RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k; sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
-COPY --chown=user:user .zshrc .zshrc
-RUN sed -i 's/{USER}/user/g' .zshrc
-COPY --chown=user:user .p10k.zsh .p10k.zsh
+COPY .zshrc .zshrc
+RUN sed -i 's/home\/{USER}/root/g' .zshrc
+COPY .p10k.zsh .p10k.zsh
 
 # SSH Config.
-COPY --chown=user:user ./ssh_key /home/user/.ssh/ssh_key
-RUN chmod 600 /home/user/.ssh/ssh_key
+COPY ./ssh_key /root/.ssh/ssh_key
+RUN chmod 600 /root/.ssh/ssh_key
 
 # Default execution.
 CMD ["/bin/zsh"]
