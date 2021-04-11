@@ -1,7 +1,7 @@
 ###############################################################################
-##        Name: node_root                                                     #
+##        Name: node                                                          #
 ##        Date: 06/04/2021                                                    #
-## Description: Basic dockerfile to create a simple ansible node over RHEL8.  #
+## Description: Basic dockerfile to create a simple ansible node over Ubuntu. #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
@@ -9,10 +9,11 @@
 
 
 
-FROM rhel8:activated
+FROM ubuntu:21.04
 
 # Update and install main packages.
-RUN dnf -y update && dnf -y install openssh-server python3
+RUN ln -snf /usr/share/zoneinfo/Europe/Madrid /etc/localtime; echo Europe/Madrid > /etc/timezone
+RUN apt -y update && apt -y install openssh-server python3
 
 # Expose port:
 EXPOSE 22

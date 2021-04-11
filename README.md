@@ -32,6 +32,7 @@ Example run instrucction:
 docker run --rm -ti alpine/basic:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 18/11/2020_
@@ -39,6 +40,7 @@ _Last test info:_
 - _Base image versión: alpine:3.12.3_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -69,6 +71,7 @@ Example run instrucction (Set test time 20s):
 docker run --rm -ti -e STTIME=20 alpine/stress_test:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 18/11/2020_
@@ -76,6 +79,7 @@ _Last test info:_
 - _Base image versión: alpine:3.12.3_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -102,6 +106,7 @@ Example run instrucction:
 docker run --rm -ti python/basic:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 13/12/2020_
@@ -109,6 +114,7 @@ _Last test info:_
 - _Base image versión: python:3.9.0-alpine3.12_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -134,6 +140,7 @@ Example run instrucction:
 docker run --rm -ti -p 8085:8080 python/python_server:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 11/11/2020_
@@ -141,6 +148,7 @@ _Last test info:_
 - _Base image versión: python:3.9.0-alpine3.12_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -179,6 +187,7 @@ Example exec instrucction:
 docker exec -ti ansible_master /bin/zsh
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -186,6 +195,7 @@ _Last test info:_
 - _Base image versión: rhel8:8.3_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
@@ -221,6 +231,7 @@ Example ssh connection:
 ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -228,12 +239,13 @@ _Last test info:_
 - _Base image versión: rhel8:8.3_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
 ## rhel/ansible/root/
 
-### rhel/ansible/root/master_root:v1.0
+### rhel/ansible/root/master:v1.0
 
 Recommended build instrucction:
 ```
@@ -242,7 +254,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel/ansible/root/master_root:latest -f ~/projects/docker_rfd/rhel/ansible/root/master_root ~/projects/docker_rfd/rhel/ansible/root/
+docker build --force-rm -t rhel/ansible/root/master:latest -f ~/projects/docker_rfd/rhel/ansible/root/master ~/projects/docker_rfd/rhel/ansible/root/
 ```
 
 Recommended run instrucction:
@@ -252,7 +264,7 @@ docker run -tid --name <(some_container_name)> -h <(some_hostname)> <(image_name
 
 Example run instrucction:
 ```
-docker run -tid --name ansible_master -h ansible_master rhel/ansible/root/master_root:latest
+docker run -tid --name ansible_master -h ansible_master rhel/ansible/root/master:latest
 ```
 
 Recommended exec instrucction:
@@ -265,6 +277,7 @@ Example exec instrucction:
 docker exec -ti ansible_master /bin/zsh
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -272,10 +285,11 @@ _Last test info:_
 - _Base image versión: rhel8:8.3_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
-### rhel/ansible/root/node_root:v1.0
+### rhel/ansible/root/node:v1.0
 
 Recommended build instrucction:
 ```
@@ -284,7 +298,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel/ansible/root/node_root:latest -f ~/projects/docker_rfd/rhel/ansible/root/node_root ~/projects/docker_rfd/rhel/ansible/root/
+docker build --force-rm -t rhel/ansible/root/node:latest -f ~/projects/docker_rfd/rhel/ansible/root/node ~/projects/docker_rfd/rhel/ansible/root/
 ```
 
 Recommended run instrucction:
@@ -294,7 +308,7 @@ docker run -tid -p <(host_port)>:<(container_port)> --name <(some_container_name
 
 Example run instrucction:
 ```
-docker run -tid -p 8081:22 --name ansible_node_01 -h ansible_node_01 rhel/ansible/root/node_root:latest
+docker run -tid -p 8081:22 --name ansible_node_01 -h ansible_node_01 rhel/ansible/root/node:latest
 ```
 
 Recommended ssh connection:
@@ -307,6 +321,7 @@ Example ssh connection:
 ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -314,6 +329,7 @@ _Last test info:_
 - _Base image versión: rhel8:8.3_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
@@ -339,6 +355,7 @@ Example run instrucction:
 docker run --rm -ti rhel/basic:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 14/10/2020_
@@ -346,6 +363,7 @@ _Last test info:_
 - _Base image versión: rhel7:7.9_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -381,6 +399,7 @@ Example ssh connection:
 ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
 ---
+
 _Last test info:_
 
 - _Date: 12/12/2020_
@@ -388,6 +407,7 @@ _Last test info:_
 - _Base image versión: rhel8:8.2_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -413,6 +433,7 @@ Example run instrucction:
 docker run --rm -ti --name rhel_zsh rhel/zsh:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 26/10/2020_
@@ -420,6 +441,7 @@ _Last test info:_
 - _Base image versión: rhel8:8.2_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -457,6 +479,7 @@ Example exec instrucction:
 docker exec -ti ansible_master /bin/zsh
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -464,6 +487,7 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
@@ -499,6 +523,7 @@ Example ssh connection:
 ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -506,12 +531,13 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
 ## ubuntu/ansible/root
 
-### ubuntu/ansible/root/master_root:v1.0
+### ubuntu/ansible/root/master:v1.0
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -519,7 +545,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t ubuntu/ansible/root/master_root:latest -f ~/projects/docker_rfd/ubuntu/ansible/root/master_root ~/projects/docker_rfd/ubuntu/ansible/root/
+docker build --force-rm -t ubuntu/ansible/root/master:latest -f ~/projects/docker_rfd/ubuntu/ansible/root/master ~/projects/docker_rfd/ubuntu/ansible/root/
 ```
 
 Recommended run instrucction:
@@ -529,7 +555,7 @@ docker run -tid --name <(some_container_name)> -h <(some_hostname)> <(image_name
 
 Example run instrucction:
 ```
-docker run -tid --name ansible_master -h ansible_master ubuntu/ansible/root/master_root:latest
+docker run -tid --name ansible_master -h ansible_master ubuntu/ansible/root/master:latest
 ```
 
 Recommended exec instrucction:
@@ -542,6 +568,7 @@ Example exec instrucction:
 docker exec -ti ansible_master /bin/zsh
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -549,10 +576,11 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
-### ubuntu/ansible/node_root:v1.0
+### ubuntu/ansible/node:v1.0
 
 Recommended build instrucction:
 ```
@@ -561,7 +589,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t ubuntu/ansible/root/node_root:latest -f ~/projects/docker_rfd/ubuntu/ansible/root/node_root ~/projects/docker_rfd/ubuntu/ansible/root/
+docker build --force-rm -t ubuntu/ansible/root/node:latest -f ~/projects/docker_rfd/ubuntu/ansible/root/node ~/projects/docker_rfd/ubuntu/ansible/root/
 ```
 
 Recommended run instrucction:
@@ -571,7 +599,7 @@ docker run -tid -p <(host_port)>:<(container_port)> --name <(some_container_name
 
 Example run instrucction:
 ```
-docker run -tid -p 8081:22 --name ansible_node_01 -h ansible_node_01 ubuntu/ansible/root/node_root:latest
+docker run -tid -p 8081:22 --name ansible_node_01 -h ansible_node_01 ubuntu/ansible/root/node:latest
 ```
 
 Recommended ssh connection:
@@ -584,6 +612,7 @@ Example ssh connection:
 ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
 ---
+
 _Last test info:_
 
 - _Date: 06/04/2021_
@@ -591,6 +620,7 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.5_
+
 ---
 
 
@@ -616,6 +646,7 @@ Example run instrucction:
 docker run --rm -ti ubuntu/basic:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 14/10/2020_
@@ -623,6 +654,7 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -658,6 +690,7 @@ Example ssh connection:
 ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
 ---
+
 _Last test info:_
 
 - _Date: 12/12/2020_
@@ -665,6 +698,7 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
@@ -690,6 +724,7 @@ Example run instrucction:
 docker run --rm -ti --name ubuntu_basic ubuntu/zsh:latest
 ```
 ---
+
 _Last test info:_
 
 - _Date: 26/10/2020_
@@ -697,6 +732,7 @@ _Last test info:_
 - _Base image versión: ubuntu:21.04_
 
 - _Build on: Docker-CE 20.10.1_
+
 ---
 
 
