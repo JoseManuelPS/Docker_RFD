@@ -2,7 +2,6 @@
 ###############################################################################
 ##        Name: stress_test.sh                                                #
 ##        Date: 24/11/2020                                                    #
-##     Version: v1.1                                                          #
 ## Description: Simple script for test CPU/RAM/NETWORK/STORAGE stats.         #
 ##----------------------------------------------------------------------------#
 ##      Values: -> STTIME                                                     #
