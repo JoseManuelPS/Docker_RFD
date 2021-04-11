@@ -1,7 +1,6 @@
 ###############################################################################
 ##        Name: basic                                                         #
 ##        Date: 14/10/2020                                                    #
-##     Version: v1.0                                                          #
 ## Description: A simple dockerfile, which runs a base image of rhel7:7.9.    #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #

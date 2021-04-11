@@ -1,7 +1,6 @@
 ###############################################################################
 ##        Name: zsh                                                           #
 ##        Date: 05/04/2021                                                    #
-##     Version: v1.2                                                          #
 ## Description: A simple dockerfile, which runs a simple container with the   #
 ##              custom shell zsh with ohmyzsh over RHEL8.                     #
 ##----------------------------------------------------------------------------#

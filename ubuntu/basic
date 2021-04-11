@@ -1,7 +1,6 @@
 ###############################################################################
 ##        Name: basic                                                         #
 ##        Date: 14/10/2020                                                    #
-##     Version: v1.0                                                          #
 ## Description: A simple dockerfile, which runs a base image of ubuntu:21.04. #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
