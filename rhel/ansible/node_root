@@ -1,0 +1,30 @@
+###############################################################################
+##        Name: node_root                                                     #
+##        Date: 06/04/2021                                                    #
+##     Version: v1.0                                                          #
+## Description: Basic dockerfile to create a simple ansible node over RHEL8.  #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM rhel8:activated
+
+# Update and install main packages.
+RUN dnf -y update && dnf -y install openssh-server python3
+
+# Expose port:
+EXPOSE 22
+
+# Config sshd
+RUN mkdir -p /var/run/sshd /root/.ssh/
+RUN ssh-keygen -A; chmod 400 -R /etc/ssh/
+COPY ./ssh_key.pub /root/.ssh/ssh_key.pub
+RUN cat /root/.ssh/ssh_key.pub > /root/.ssh/authorized_keys
+
+# Default execution.
+CMD ["/usr/sbin/sshd", "-D"]
+
+

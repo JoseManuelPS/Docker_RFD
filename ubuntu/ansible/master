@@ -1,7 +1,7 @@
 ###############################################################################
 ##        Name: master                                                        #
-##        Date: 23/01/2021                                                    #
-##     Version: v1.0                                                          #
+##        Date: 06/04/2021                                                    #
+##     Version: v1.1                                                          #
 ## Description: Basic dockerfile to create a simple ansible master node       #
 ##              over Ubuntu.                                                  #
 ##----------------------------------------------------------------------------#
@@ -34,13 +34,15 @@ USER user
 # Install oh-my-zsh.
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# Basic zsh personalization.
+# Custom zsh personalization.
 ENV ZSH_CUSTOM /home/user/.oh-my-zsh/custom
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 RUN git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM}/plugins/k; sed -i 's/^k[[:space:]]/z /g' ${ZSH_CUSTOM}/plugins/k/k.sh
 COPY --chown=user:user .zshrc .zshrc
+RUN sed -i 's/{USER}/user/g' .zshrc
 COPY --chown=user:user .p10k.zsh .p10k.zsh
 
 # SSH Config.
