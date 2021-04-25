@@ -580,7 +580,7 @@ _Last test info:_
 ---
 
 
-### ubuntu/ansible/node:v1.0
+### ubuntu/ansible/root/node:v1.0
 
 Recommended build instrucction:
 ```
