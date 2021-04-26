@@ -2,8 +2,6 @@
 
 Multiple dockerfiles for all kinds of problems.
 
-
-
 ## Prerequisites
 
 If you want to make use rhel dockerfiles, you should also create a base image called **rhel7:activated** or **rhel8:activated** with an active subscription.
@@ -153,9 +151,11 @@ _Last test info:_
 
 
 
-## rhel/ansible/basic/
+## rhel/ansible/basic/:v1.0
 
 ### rhel/ansible/basic/master:v1.1
+
+`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -190,16 +190,18 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: rhel8:8.3_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
 
 ### rhel/ansible/basic/node:v1.1
+
+`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -234,16 +236,16 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: rhel8:8.3_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
 
-## rhel/ansible/root/
+## rhel/ansible/root/:v1.0
 
 ### rhel/ansible/root/master:v1.0
 
@@ -280,11 +282,11 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: rhel8:8.3_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
@@ -324,11 +326,11 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: rhel8:8.3_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
@@ -368,6 +370,8 @@ _Last test info:_
 
 
 ## rhel/ssh:v1.0
+
+`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -446,9 +450,12 @@ _Last test info:_
 
 
 
-## ubuntu/ansible/basic
+## ubuntu/ansible/basic:v1.1
 
 ### ubuntu/ansible/basic/master:v1.1
+
+`IMPORTANT: Before building the image, complete TODO's.`
+
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -482,16 +489,18 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: ubuntu:21.04_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
 
 ### ubuntu/ansible/basic/node:v1.1
+
+`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -526,18 +535,19 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: ubuntu:21.04_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
 
-## ubuntu/ansible/root
+## ubuntu/ansible/root:v1.0
 
 ### ubuntu/ansible/root/master:v1.0
+
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -571,11 +581,11 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: ubuntu:21.04_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
@@ -615,11 +625,11 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 06/04/2021_
+- _Date: 19/04/2021_
 
 - _Base image versión: ubuntu:21.04_
 
-- _Build on: Docker-CE 20.10.5_
+- _Build on: Docker-CE 20.10.6_
 
 ---
 
@@ -659,6 +669,8 @@ _Last test info:_
 
 
 ## ubuntu/ssh:v1.0
+
+`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
