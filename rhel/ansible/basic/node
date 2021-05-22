@@ -26,8 +26,7 @@ RUN ssh-keygen -A; chmod +r -R /etc/ssh/
 COPY ./ssh_key.pub /home/user/.ssh/ssh_key.pub
 RUN cat /home/user/.ssh/ssh_key.pub > /home/user/.ssh/authorized_keys
 
-# TODO: Type some password for root before build.
-RUN echo "root:<(some_password)>" | chpasswd; echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+RUN echo "root:Utk2Tc8Aru4" | chpasswd; echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
 
 # Set <(user)> as the default user.
 WORKDIR /home/user

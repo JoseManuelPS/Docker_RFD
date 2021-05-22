@@ -155,8 +155,6 @@ _Last test info:_
 
 ### rhel/ansible/basic/master:v1.1
 
-`IMPORTANT: Before building the image, complete TODO's.`
-
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -190,7 +188,7 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: rhel8:8.3_
 
@@ -200,8 +198,6 @@ _Last test info:_
 
 
 ### rhel/ansible/basic/node:v1.1
-
-`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -236,7 +232,7 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: rhel8:8.3_
 
@@ -282,7 +278,7 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: rhel8:8.3_
 
@@ -326,7 +322,7 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: rhel8:8.3_
 
@@ -370,8 +366,6 @@ _Last test info:_
 
 
 ## rhel/ssh:v1.0
-
-`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -454,8 +448,6 @@ _Last test info:_
 
 ### ubuntu/ansible/basic/master:v1.1
 
-`IMPORTANT: Before building the image, complete TODO's.`
-
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -489,7 +481,7 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: ubuntu:21.04_
 
@@ -499,8 +491,6 @@ _Last test info:_
 
 
 ### ubuntu/ansible/basic/node:v1.1
-
-`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```
@@ -535,7 +525,7 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: ubuntu:21.04_
 
@@ -581,7 +571,7 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: ubuntu:21.04_
 
@@ -625,7 +615,7 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/04/2021_
+- _Date: 19/05/2021_
 
 - _Base image versión: ubuntu:21.04_
 
@@ -669,8 +659,6 @@ _Last test info:_
 
 
 ## ubuntu/ssh:v1.0
-
-`IMPORTANT: Before building the image, complete TODO's.`
 
 Recommended build instrucction:
 ```

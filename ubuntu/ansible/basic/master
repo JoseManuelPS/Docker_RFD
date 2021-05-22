@@ -19,8 +19,7 @@ RUN apt -y update; apt -y install software-properties-common; apt-add-repository
 # Install utilities <(Optional)>.
 RUN apt -y install nano iputils-ping net-tools
 
-# TODO: Type some password for root before build.
-RUN echo "root:<(some_password)>" | chpasswd
+RUN echo "root:Utk2Tc8Aru4" | chpasswd
 
 # Create a new user.
 RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 user

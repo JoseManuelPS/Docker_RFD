@@ -19,8 +19,7 @@ RUN dnf -y update && dnf -y install python3 curl zsh git ansible
 # Install utilities <(Optional)>.
 RUN dnf -y install nano iputils
 
-# TODO: Type some password for root before build.
-RUN echo "root:<(some_password)>" | chpasswd
+RUN echo "root:Utk2Tc8Aru4" | chpasswd
 
 # Create a new user.
 RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 user

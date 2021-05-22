@@ -24,8 +24,7 @@ RUN mkdir -p /root/.ssh/
 COPY ./ssh_key.pub /root/.ssh/ssh_key.pub
 RUN cat /root/.ssh/ssh_key.pub > /root/.ssh/authorized_keys
 
-# TODO: Type some password before build.
-RUN echo "root:<(some_password)>" | chpasswd
+RUN echo "root:Utk2Tc8Aru4" | chpasswd
 
 # Default execution.
 CMD ["/usr/sbin/sshd", "-D"]
