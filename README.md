@@ -29,14 +29,13 @@ Example run instrucction:
 ```
 docker run --rm -ti alpine/basic:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 18/11/2020_
-
 - _Base image versión: alpine:3.12.3_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -68,14 +67,13 @@ Example run instrucction (Set test time 20s):
 ```
 docker run --rm -ti -e STTIME=20 alpine/stress_test:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 18/11/2020_
-
 - _Base image versión: alpine:3.12.3_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -103,14 +101,13 @@ Example run instrucction:
 ```
 docker run --rm -ti python/basic:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 13/12/2020_
-
 - _Base image versión: python:3.9.0-alpine3.12_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -137,14 +134,13 @@ Example run instrucction:
 ```
 docker run --rm -ti -p 8085:8080 python/python_server:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 11/11/2020_
-
 - _Base image versión: python:3.9.0-alpine3.12_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -184,14 +180,13 @@ Example exec instrucction:
 ```
 docker exec -ti ansible_master /bin/zsh
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: rhel8:8.3_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -228,14 +223,13 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: rhel8:8.3_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -274,14 +268,13 @@ Example exec instrucction:
 ```
 docker exec -ti ansible_master /bin/zsh
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: rhel8:8.3_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -318,14 +311,13 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: rhel8:8.3_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -352,14 +344,13 @@ Example run instrucction:
 ```
 docker run --rm -ti rhel/basic:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 14/10/2020_
-
 - _Base image versión: rhel7:7.9_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -396,14 +387,13 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 12/12/2020_
-
 - _Base image versión: rhel8:8.2_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -430,14 +420,13 @@ Example run instrucction:
 ```
 docker run --rm -ti --name rhel_zsh rhel/zsh:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 26/10/2020_
-
 - _Base image versión: rhel8:8.2_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -477,14 +466,13 @@ Example exec instrucction:
 ```
 docker exec -ti ansible_master /bin/zsh
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -521,14 +509,13 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -567,14 +554,13 @@ Example exec instrucction:
 ```
 docker exec -ti ansible_master /bin/zsh
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -611,14 +597,13 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 19/05/2021_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.6_
 
 ---
@@ -645,14 +630,13 @@ Example run instrucction:
 ```
 docker run --rm -ti ubuntu/basic:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 14/10/2020_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -689,14 +673,13 @@ Example ssh connection:
 ```
 ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 12/12/2020_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
@@ -723,14 +706,13 @@ Example run instrucction:
 ```
 docker run --rm -ti --name ubuntu_basic ubuntu/zsh:latest
 ```
+
 ---
 
 _Last test info:_
 
 - _Date: 26/10/2020_
-
 - _Base image versión: ubuntu:21.04_
-
 - _Build on: Docker-CE 20.10.1_
 
 ---
