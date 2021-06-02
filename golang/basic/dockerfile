@@ -1,7 +1,8 @@
 ###############################################################################
-##        Name: basic                                                         #
-##        Date: 14/10/2020                                                    #
-## Description: A simple dockerfile, which runs a base image of ubuntu:21.04. #
+##        Name: golang/basic                                                  #
+##        Date: 02/06/2021                                                    #
+## Description: A simple dockerfile, which runs a base image of               #
+##              golang:1.16.4.                                                #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
