@@ -1,0 +1,29 @@
+###############################################################################
+##        Name: basic                                                         #
+##        Date: 14/10/2020                                                    #
+## Description: A simple dockerfile, which runs a base image of ubuntu:21.04. #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM golang:1.16.4
+
+# Update packages.
+RUN apt -y update
+
+# Create a new user.
+RUN groupadd -g 1000 user
+RUN useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
+
+# Default execution.
+CMD ["/bin/bash"]
+
+

@@ -80,6 +80,40 @@ _Last test info:_
 
 
 
+## golang/basic:v1.0
+
+Recommended build instrucction:
+```
+docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm --pull -t golang/basic:latest -f ~/projects/docker_rfd/golang/basic/dockerfile ~/projects/docker_rfd/golang/basic/
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti golang/basic:latest
+```
+
+---
+
+_Last test info:_
+
+- _Date: 02/06/2021_
+- _Base image versión: golang:1.16.4_
+- _Build on: Docker-CE 20.10.6_
+
+---
+
+
+
 ## python/basic:v1.0
 
 Recommended build instrucction:
