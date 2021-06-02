@@ -17,7 +17,7 @@ docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_
 
 Example build instrucction:
 ```
-docker build --force-rm --pull -t alpine/basic:latest -f ~/projects/docker_rfd/alpine/basic .
+docker build --force-rm --pull -t alpine/basic:latest -f ~/projects/docker_rfd/alpine/basic/dockerfile ~/projects/docker_rfd/alpine/basic/
 ```
 
 Recommended run instrucction:
@@ -123,7 +123,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t python/basic:latest -f ~/projects/docker_rfd/python/basic .
+docker build --force-rm -t python/basic:latest -f ~/projects/docker_rfd/python/basic/dockerfile ~/projects/docker_rfd/python/basic/
 ```
 
 Recommended run instrucction:
@@ -366,7 +366,7 @@ docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerf
 
 Example build instrucction:
 ```
-docker build --force-rm -t rhel/basic:latest -f ~/projects/docker_rfd/rhel/basic .
+docker build --force-rm -t rhel/basic:latest -f ~/projects/docker_rfd/rhel/basic/dockerfile ~/projects/docker_rfd/rhel/basic/
 ```
 
 Recommended run instrucction:
@@ -652,7 +652,7 @@ docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_
 
 Example build instrucction:
 ```
-docker build --force-rm --pull -t ubuntu/basic:latest -f ~/projects/docker_rfd/ubuntu/basic .
+docker build --force-rm --pull -t ubuntu/basic:latest -f ~/projects/docker_rfd/ubuntu/basic/dockerfile ~/projects/docker_rfd/ubuntu/basic/
 ```
 
 Recommended run instrucction:
