@@ -1,8 +1,7 @@
 ###############################################################################
 ##        Name: golang/basic                                                  #
 ##        Date: 02/06/2021                                                    #
-## Description: A simple dockerfile, which runs a base image of               #
-##              golang:1.16.4.                                                #
+## Description: Basic dockerfile for Golang.                                  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

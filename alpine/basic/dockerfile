@@ -1,7 +1,7 @@
 ###############################################################################
-##        Name: basic                                                         #
+##        Name: alpine/basic                                                  #
 ##        Date: 18/11/2020                                                    #
-## Description: Basic dockerfile for alpine:3.12.3.                           #
+## Description: Basic dockerfile for Alpine.                                  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

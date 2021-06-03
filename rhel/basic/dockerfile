@@ -1,7 +1,7 @@
 ###############################################################################
-##        Name: basic                                                         #
+##        Name: rhel/basic                                                    #
 ##        Date: 14/10/2020                                                    #
-## Description: A simple dockerfile, which runs a base image of rhel7:7.9.    #
+## Description: Basic dockerfile for RHEL7.                                   #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

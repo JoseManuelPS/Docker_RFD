@@ -1,8 +1,7 @@
 ###############################################################################
-##        Name: zsh                                                           #
+##        Name: rhel/zsh                                                      #
 ##        Date: 05/04/2020                                                    #
-## Description: A simple dockerfile, which runs a simple container with the   #
-##              custom shell zsh with ohmyzsh over RHEL8.                     #
+## Description: Basic dockerfile to work with zsh over RHEL8.                 #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

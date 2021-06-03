@@ -10,6 +10,8 @@ If you want to make use rhel dockerfiles, you should also create a base image ca
 
 ## alpine/basic:v1.0
 
+Basic dockerfile for Alpine.
+
 Recommended build instrucction:
 ```
 docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -42,6 +44,8 @@ _Last test info:_
 
 
 ## alpine/stress_test:v1.0
+
+Basic dockerfile to execute the script **stress_test.sh** over Alpine.
 
 Recommended build instrucction:
 ```
@@ -82,6 +86,8 @@ _Last test info:_
 
 ## golang/basic:v1.0
 
+Basic dockerfile for Golang.
+
 Recommended build instrucction:
 ```
 docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -113,8 +119,42 @@ _Last test info:_
 ---
 
 
+## golang/zsh:v1.0 -> golang/workspace
+
+Recommended build instrucction:
+```
+docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm --pull -t golang/workspace:latest -f ~/projects/docker_rfd/golang/workspace/dockerfile ~/projects/docker_rfd/golang/workspace/
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti golang/workspace:latest
+```
+
+---
+
+_Last test info:_
+
+- _Date: 02/06/2021_
+- _Base image versión: golang:1.16.4_
+- _Build on: Docker-CE 20.10.6_
+
+---
+
 
 ## golang/zsh:v1.0
+
+Basic dockerfile to work with zsh over Golang.
 
 Recommended build instrucction:
 ```
@@ -150,6 +190,8 @@ _Last test info:_
 
 ## python/basic:v1.0
 
+Basic dockerfile for Python.
+
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -182,6 +224,8 @@ _Last test info:_
 
 
 ## python/python_server:v1.0
+
+Basic dockerfile to create a simple http server over Python.
 
 Recommended build instrucction:
 ```
@@ -218,6 +262,8 @@ _Last test info:_
 ## rhel/ansible/basic/:v1.0
 
 ### rhel/ansible/basic/master:v1.1
+
+Basic dockerfile to create a simple ansible master node over RHEL8.
 
 Recommended build instrucction:
 ```
@@ -261,6 +307,8 @@ _Last test info:_
 
 
 ### rhel/ansible/basic/node:v1.1
+
+Basic dockerfile to create a simple ansible node over RHEL8.
 
 Recommended build instrucction:
 ```
@@ -307,6 +355,8 @@ _Last test info:_
 
 ### rhel/ansible/root/master:v1.0
 
+Basic dockerfile to create a simple ansible master node over RHEL8.
+
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -349,6 +399,8 @@ _Last test info:_
 
 
 ### rhel/ansible/root/node:v1.0
+
+Basic dockerfile to create a simple ansible node over RHEL8.
 
 Recommended build instrucction:
 ```
@@ -393,6 +445,8 @@ _Last test info:_
 
 ## rhel/basic:v1.0
 
+Basic dockerfile for RHEL7.
+
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -425,6 +479,8 @@ _Last test info:_
 
 
 ## rhel/ssh:v1.0
+
+Basic dockerfile which runs a simple container with the ssh service exposed over RHEL8.
 
 Recommended build instrucction:
 ```
@@ -467,7 +523,42 @@ _Last test info:_
 ---
 
 
+## rhel/zsh:v1.2 -> rhel/workspace
+
+Recommended build instrucction:
+```
+docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm -t rhel/workspace:latest -f ~/projects/docker_rfd/rhel/workspace/dockerfile ~/projects/docker_rfd/rhel/workspace
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti --name <(container_name)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti --name rhel_zsh rhel/workspace:latest
+```
+
+---
+
+_Last test info:_
+
+- _Date: 26/10/2020_
+- _Base image versión: rhel8:8.2_
+- _Build on: Docker-CE 20.10.1_
+
+---
+
+
 ## rhel/zsh:v1.2
+
+Basic dockerfile to work with zsh over RHEL8.
 
 Recommended build instrucction:
 ```
@@ -504,6 +595,8 @@ _Last test info:_
 ## ubuntu/ansible/basic:v1.1
 
 ### ubuntu/ansible/basic/master:v1.1
+
+Basic dockerfile to create a simple ansible master node over Ubuntu.
 
 Recommended build instrucction:
 ```
@@ -547,6 +640,8 @@ _Last test info:_
 
 
 ### ubuntu/ansible/basic/node:v1.1
+
+Basic dockerfile to create a simple ansible node over Ubuntu.
 
 Recommended build instrucction:
 ```
@@ -593,6 +688,8 @@ _Last test info:_
 
 ### ubuntu/ansible/root/master:v1.0
 
+Basic dockerfile to create a simple ansible master node over Ubuntu.
+
 Recommended build instrucction:
 ```
 docker build --force-rm -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -635,6 +732,8 @@ _Last test info:_
 
 
 ### ubuntu/ansible/root/node:v1.0
+
+Basic dockerfile to create a simple ansible node over Ubuntu.
 
 Recommended build instrucction:
 ```
@@ -679,6 +778,8 @@ _Last test info:_
 
 ## ubuntu/basic:v1.0
 
+Basic dockerfile for Ubuntu.
+
 Recommended build instrucction:
 ```
 docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
@@ -711,6 +812,8 @@ _Last test info:_
 
 
 ## ubuntu/ssh:v1.0
+
+Basic dockerfile which runs a simple container with the ssh service exposed over Ubuntu.
 
 Recommended build instrucction:
 ```
@@ -753,7 +856,43 @@ _Last test info:_
 ---
 
 
+## ubuntu/zsh:v1.2 -> ubuntu/workspace
+
+
+Recommended build instrucction:
+```
+docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm --pull -t ubuntu/workspace:latest -f ~/projects/docker_rfd/ubuntu/workspace/dockerfile ~/projects/docker_rfd/ubuntu/workspace
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti --name <(container_name)> <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti --name ubuntu_basic ubuntu/workspace:latest
+```
+
+---
+
+_Last test info:_
+
+- _Date: 26/10/2020_
+- _Base image versión: ubuntu:21.04_
+- _Build on: Docker-CE 20.10.1_
+
+---
+
+
 ## ubuntu/zsh:v1.2
+
+Basic dockerfile to work with zsh over Ubuntu.
 
 Recommended build instrucction:
 ```

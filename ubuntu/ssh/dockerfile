@@ -1,5 +1,5 @@
 ###############################################################################
-##        Name: ssh                                                           #
+##        Name: ubuntu/ssh                                                    #
 ##        Date: 12/12/2020                                                    #
 ## Description: Basic dockerfile which runs a simple container with the ssh   #
 ##              service exposed over Ubuntu.                                  #

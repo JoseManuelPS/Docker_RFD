@@ -1,5 +1,5 @@
 ###############################################################################
-##        Name: stress_test                                                   #
+##        Name: alpine/stress_test                                            #
 ##        Date: 18/11/2020                                                    #
 ## Description: Basic dockerfile to execute the script stress_test.sh         #
 ##              over Alpine.                                                  #

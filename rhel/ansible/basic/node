@@ -1,5 +1,5 @@
 ###############################################################################
-##        Name: node                                                          #
+##        Name: rhel/ansible/basic/node                                       #
 ##        Date: 06/04/2021                                                    #
 ## Description: Basic dockerfile to create a simple ansible node over RHEL8.  #
 ##----------------------------------------------------------------------------#

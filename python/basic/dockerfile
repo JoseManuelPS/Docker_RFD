@@ -1,7 +1,7 @@
 ###############################################################################
-##        Name: basic                                                         #
+##        Name: python/basic                                                  #
 ##        Date: 13/12/2020                                                    #
-## Description: Basic dockerfile for python:3.9.0-alpine3.12.                 #
+## Description: Basic dockerfile for Python.                                  #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #

@@ -1,8 +1,7 @@
 ###############################################################################
 ##        Name: golang/zsh                                                    #
 ##        Date: 02/06/2021                                                    #
-## Description: A simple dockerfile, which runs a simple container with the   #
-##              custom shell zsh with ohmyzsh over golang:1.16.4.             #
+## Description: Basic dockerfile to work with zsh over Golang.                #
 ##----------------------------------------------------------------------------#
 ##      Editor: José Manuel Plana Santos                                      #
 ##     Contact: dev.josemanuelps@gmail.com                                    #
