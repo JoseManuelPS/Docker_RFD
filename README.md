@@ -36,9 +36,9 @@ docker run --rm -ti alpine/basic:latest
 
 _Last test info:_
 
-- _Date: 18/11/2020_
-- _Base image versión: alpine:3.12.3_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **18/11/2020**_
+- _Base image versión: **alpine:3.12.3**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -76,9 +76,9 @@ docker run --rm -ti -e STTIME=20 alpine/stress_test:latest
 
 _Last test info:_
 
-- _Date: 18/11/2020_
-- _Base image versión: alpine:3.12.3_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **18/11/2020**_
+- _Base image versión: **alpine:3.12.3**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -112,9 +112,9 @@ docker run --rm -ti golang/basic:latest
 
 _Last test info:_
 
-- _Date: 02/06/2021_
-- _Base image versión: golang:1.16.4_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **02/06/2021**_
+- _Base image versión: **golang:1.16.4**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -145,9 +145,9 @@ docker run --rm -ti golang/workspace:latest
 
 _Last test info:_
 
-- _Date: 02/06/2021_
-- _Base image versión: golang:1.16.4_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **02/06/2021**_
+- _Base image versión: **golang:1.16.4**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -180,9 +180,9 @@ docker run --rm -ti golang/zsh:latest
 
 _Last test info:_
 
-- _Date: 02/06/2021_
-- _Base image versión: golang:1.16.4_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **02/06/2021**_
+- _Base image versión: **golang:1.16.4**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -216,9 +216,9 @@ docker run --rm -ti python/basic:latest
 
 _Last test info:_
 
-- _Date: 13/12/2020_
-- _Base image versión: python:3.9.0-alpine3.12_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **13/12/2020**_
+- _Base image versión: **python:3.9.0-alpine3.12**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -251,9 +251,9 @@ docker run --rm -ti -p 8085:8080 python/python_server:latest
 
 _Last test info:_
 
-- _Date: 11/11/2020_
-- _Base image versión: python:3.9.0-alpine3.12_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **11/11/2020**_
+- _Base image versión: **python:3.9.0-alpine3.12**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -299,9 +299,9 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: rhel8:8.3_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **25/07/2021**_
+- _Base image versión: **ubi8/ubi:8.4-206.1626828523**_
+- _Build on: **Docker-CE 20.10.7**_
 
 ---
 
@@ -344,9 +344,9 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: rhel8:8.3_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **25/07/2021**_
+- _Base image versión: **ubi8/ubi:8.4-206.1626828523**_
+- _Build on: **Docker-CE 20.10.7**_
 
 ---
 
@@ -391,9 +391,9 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: rhel8:8.3_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **19/05/2021**_
+- _Base image versión: **rhel8:8.3**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -436,9 +436,9 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: rhel8:8.3_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **19/05/2021**_
+- _Base image versión: **rhel8:8.3**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -471,9 +471,9 @@ docker run --rm -ti rhel/basic:latest
 
 _Last test info:_
 
-- _Date: 14/10/2020_
-- _Base image versión: rhel7:7.9_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **14/10/2020**_
+- _Base image versión: **rhel7:7.9**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -516,9 +516,9 @@ ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 
 _Last test info:_
 
-- _Date: 12/12/2020_
-- _Base image versión: rhel8:8.2_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **12/12/2020**_
+- _Base image versión: **rhel8:8.2**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -549,9 +549,9 @@ docker run --rm -ti --name rhel_zsh rhel/workspace:latest
 
 _Last test info:_
 
-- _Date: 26/10/2020_
-- _Base image versión: rhel8:8.2_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **26/10/2020**_
+- _Base image versión: **rhel8:8.2**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -584,9 +584,9 @@ docker run --rm -ti --name rhel_zsh rhel/zsh:latest
 
 _Last test info:_
 
-- _Date: 26/10/2020_
-- _Base image versión: rhel8:8.2_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **26/10/2020**_
+- _Base image versión: **rhel8:8.2**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -632,9 +632,9 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **25/07/2021**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.7**_
 
 ---
 
@@ -677,9 +677,9 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **25/07/2021**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.7**_
 
 ---
 
@@ -724,9 +724,9 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **19/05/2021**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -769,9 +769,9 @@ ssh -i ~/.ssh/ssh_key root@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: 19/05/2021_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.6_
+- _Date: **19/05/2021**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.6**_
 
 ---
 
@@ -804,9 +804,9 @@ docker run --rm -ti ubuntu/basic:latest
 
 _Last test info:_
 
-- _Date: 14/10/2020_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **14/10/2020**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -849,9 +849,9 @@ ssh -i ~/.ssh/ssh_key root@localhost -p 8081
 
 _Last test info:_
 
-- _Date: 12/12/2020_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **12/12/2020**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -883,9 +883,9 @@ docker run --rm -ti --name ubuntu_basic ubuntu/workspace:latest
 
 _Last test info:_
 
-- _Date: 26/10/2020_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **26/10/2020**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
@@ -918,9 +918,9 @@ docker run --rm -ti --name ubuntu_basic ubuntu/zsh:latest
 
 _Last test info:_
 
-- _Date: 26/10/2020_
-- _Base image versión: ubuntu:21.04_
-- _Build on: Docker-CE 20.10.1_
+- _Date: **26/10/2020**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.1**_
 
 ---
 
