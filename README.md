@@ -632,9 +632,9 @@ docker exec -ti ansible_master /bin/zsh
 
 _Last test info:_
 
-- _Date: **25/07/2021**_
+- _Date: **08/04/2022**_
 - _Base image versión: **ubuntu:21.04**_
-- _Build on: **Docker-CE 20.10.7**_
+- _Build on: **Docker-CE 20.10.13**_
 
 ---
 
@@ -677,9 +677,9 @@ ssh -i ~/.ssh/ssh_key user@ansible_node_01 -p 8081
 
 _Last test info:_
 
-- _Date: **25/07/2021**_
+- _Date: **08/04/2022**_
 - _Base image versión: **ubuntu:21.04**_
-- _Build on: **Docker-CE 20.10.7**_
+- _Build on: **Docker-CE 20.10.13**_
 
 ---
 
@@ -807,6 +807,41 @@ _Last test info:_
 - _Date: **14/10/2020**_
 - _Base image versión: **ubuntu:21.04**_
 - _Build on: **Docker-CE 20.10.1**_
+
+---
+
+
+## ubuntu/nopasswd:v1.0
+
+Basic dockerfile for Ubuntu.
+
+Recommended build instrucction:
+```
+docker build --force-rm --pull -t <(image_name)>:<(image_version)> -f <(path_to_dockerfile)> <(path_to_build_directory)>
+```
+
+Example build instrucction:
+```
+docker build --force-rm --pull -t ubuntu/nopasswd:latest -f ~/projects/docker_rfd/ubuntu/nopasswd/dockerfile ~/projects/docker_rfd/ubuntu/nopasswd/
+```
+
+Recommended run instrucction:
+```
+docker run --rm -ti <(image_name)>:<(image_version)>
+```
+
+Example run instrucction:
+```
+docker run --rm -ti ubuntu/nopasswd:latest
+```
+
+---
+
+_Last test info:_
+
+- _Date: **07/05/2022**_
+- _Base image versión: **ubuntu:21.04**_
+- _Build on: **Docker-CE 20.10.14**_
 
 ---
 
