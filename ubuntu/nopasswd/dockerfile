@@ -1,0 +1,28 @@
+###############################################################################
+##        Name: ubuntu/nopasswd                                               #
+##        Date: 07/05/2022                                                    #
+## Description: Basic dockerfile with sudo access for Ubuntu.                 #
+##----------------------------------------------------------------------------#
+##      Editor: José Manuel Plana Santos                                      #
+##     Contact: dev.josemanuelps@gmail.com                                    #
+###############################################################################
+
+
+
+FROM ubuntu:21.04
+
+# Update packages.
+RUN apt -y update; apt install -y sudo
+
+# Create a new user.
+RUN groupadd -g 1000 user; useradd -m -d /home/user -s /bin/bash -u 1000 -g 1000 -G audio,video,users user; echo "user	ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+
+# Set <(user)> as the default user.
+WORKDIR /home/user
+ENV HOME /home/user
+USER user
+
+# Default execution.
+CMD ["/bin/bash"]
+
+
